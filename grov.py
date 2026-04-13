@@ -9,6 +9,8 @@ shots = 1024
 results = []
 
 for n in range(3, 21):
+    tracemalloc.start()
+    t0 = time.time()
     target = np.random.randint(0, 2**n)
     target_bits = format(target, f"0{n}b")[::-1]
     iters = max(1, int(np.floor(np.pi / 4 * np.sqrt(2**n))))
@@ -35,9 +37,7 @@ for n in range(3, 21):
 
     qc.measure(range(n), range(n))
 
-    tracemalloc.start()
-    t0 = time.time()
-    counts = sim.run(transpile(qc, sim), shots=shots).result().get_counts()
+    counts = sim.run(qc, shots=shots).result().get_counts()
     elapsed = time.time() - t0
     mem = tracemalloc.get_tracemalloc_memory() / 1048576
     tracemalloc.stop()
