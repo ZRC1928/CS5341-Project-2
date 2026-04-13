@@ -32,7 +32,7 @@ def run_shor(N, n_count, shots=2048):
         
         qc.append(QFTGate(n_count).inverse(), range(n_count))
         qc.measure(range(n_count), range(n_count))
-        result = AerSimulator().run(qc, shots=shots).result()
+        result = AerSimulator().run(transpile(qc, AerSimulator()), shots=shots).result()
         counts = result.get_counts()
         rt = time.time() - t0
         mem = tracemalloc.get_tracemalloc_memory()
