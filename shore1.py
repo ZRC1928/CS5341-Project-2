@@ -7,7 +7,7 @@ from qiskit_aer import AerSimulator
 from qiskit.circuit.library import QFTGate
 
 def c_amod15(a, power):
-    U = QuantumCircuit(8)
+    U = QuantumCircuit(4)
     for _ in range(power):
         if a in [2, 13]: U.swap(2,3); U.swap(1,2); U.swap(0,1)
         if a in [7, 8]:  U.swap(0,1); U.swap(1,2); U.swap(2,3)
