@@ -39,7 +39,7 @@ for n in range(3, 21):
 
     counts = sim.run(qc, shots=shots).result().get_counts()
     elapsed = time.time() - t0
-    mem = tracemalloc.get_tracemalloc_memory() / 1048576
+    mem = tracemalloc.get_tracemalloc_memory() / 1000000
     tracemalloc.stop()
 
     top = max(counts, key=counts.get)

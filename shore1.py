@@ -58,10 +58,10 @@ counts, times, mems = [], [], []
 for nc in range(3, 14):
     factors, rt, mem = run_shor(15, nc)
     if factors:
-        print(f"{nc:<10}{nc+4:<10}{rt:<12.4f}{mem/1048576:<12.4f}{factors}")
+        print(f"{nc:<10}{nc+4:<10}{rt:<12.4f}{mem/1000000:<12.4f}{factors}")
         counts.append(nc)
         times.append(rt)
-        mems.append(mem / 1048576)
+        mems.append(mem / 1000000)
     else:
         print(f"{nc:<10}{nc+4:<10}{'FAIL':<12}{'N/A':<12}N/A")
 
