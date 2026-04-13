@@ -131,12 +131,12 @@ def simonAlg(n):
     # print(totalSpace)
     print("n = " + str(n) + ", runtime = " + str(totalTime) + " seconds, memory usage = " + str(totalSpace) + " bytes")
 
-    #return the samples, the number of samples taken to get the n-1 independent samples, the total time, and the total space
-    return output, samplingCount, totalTime, totalSpace
-
     # circuit.draw(output="mpl")
     # plt.tight_layout()
     # plt.show()
+
+    #return the samples, the number of samples taken to get the n-1 independent samples, the total time, and the total space
+    return output, samplingCount, totalTime, totalSpace
 
 def main():
     #extract n from the command line arguments, call simonAlg with it, and return the values from simonAlg
