@@ -55,7 +55,7 @@ print(f"{'Count Q':<10}{'Total Q':<10}{'Time (s)':<12}{'Mem (MB)':<12}{'Factors'
 print("-"*56)
 
 counts, times, mems = [], [], []
-for nc in range(3, 10):
+for nc in range(3, 14):
     factors, rt, mem = run_shor(15, nc)
     if factors:
         print(f"{nc:<10}{nc+4:<10}{rt:<12.4f}{mem/1048576:<12.4f}{factors}")

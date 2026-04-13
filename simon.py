@@ -142,6 +142,8 @@ def main():
     #extract n from the command line arguments, call simonAlg with it, and return the values from simonAlg
     n = sys.argv[1]
     output, samplingCount, totalTime, totalSpace = simonAlg(n)
+    #print the n-1 samples
+    print(output)
     return output, samplingCount, totalTime, totalSpace
 
 main()
